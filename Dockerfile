@@ -33,3 +33,4 @@ RUN set -x \
 	&& apk add --no-cache \
 		git openssh-client openjdk8="$JAVA_ALPINE_VERSION" \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
+RUN apk update && apk add libstdc++ && rm -rf /var/cache/apk/*
